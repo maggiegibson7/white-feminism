@@ -11,27 +11,27 @@ body {
 
 @font-face {
     font-family: "ArialNarrow";
-    src: url(/thesis/fonts/arial-narrow.ttf);
+    src: url(/fonts/arial-narrow.ttf);
 }
 
 @font-face {
     font-family: "EditorialItalic";
-    src: url(/thesis/fonts/PPEditorialNew-Italic.otf);
+    src: url(/fonts/PPEditorialNew-Italic.otf);
 }
 
 @font-face {
     font-family: "EditorialRegular";
-    src: url(/thesis/fonts/PPEditorialNew-Regular.otf);
+    src: url(/fonts/PPEditorialNew-Regular.otf);
 }
 
 @font-face {
     font-family: "EditorialLight";
-    src: url(/thesis/fonts/PPEditorialNew-Ultralight.otf);
+    src: url(/fonts/PPEditorialNew-Ultralight.otf);
 }
 
 @font-face {
     font-family: "EditorialLightItalic";
-    src: url(/thesis/fonts/PPEditorialNew-UltralightItalic.otf);
+    src: url(/fonts/PPEditorialNew-UltralightItalic.otf);
 }
 
 #begin {
@@ -777,6 +777,7 @@ p {
 .tweet-content {
     color: #8A42AF;
     line-height: 1.4em;
+    padding-top: 20px;
 }
 
 
@@ -803,9 +804,10 @@ p {
 }
 
 .date-time {
+    position: absolute;
     font-size: 1.4em;
     color: #8A42AF;
-    margin-top: 5px;
+    margin-top: 3px;
 }
 
 .likes {
@@ -828,16 +830,19 @@ p {
 
 #display-name {
     position:fixed;
-    margin-top: 27.5vh;
+    margin-top: 25.5vh;
     margin-left: 6.5vw;
+    font-family: 'EditorialLight';
+    color: #8A42AF;
+    font-size: 2.5em;
 }
 
 #twitter-handle {
     position: fixed;
     font-size: 1.4em;
     color: #8A42AF;
-    margin-top: 32vh;
-    margin-left: 7vw;
+    margin-top: 30.5vh;
+    margin-left: 6.5vw;
 }
 
 #banner-picture {
@@ -858,37 +863,34 @@ p {
     object-fit: cover;
     margin-top: 25.5vh;
     margin-left: 1vw;
+    box-shadow: 0 0 5px #8A42AF;
 }
 
 #follower-count {
     position: fixed;
-    margin-top: 38vh;
+    margin-top: 35vh;
     width: 26vw;
-    text-align: center;
+    text-align: left;
     font-size: 1.4em;
     color: #8A42AF;
-    height: 3.5vh;
-    margin-left: 0.5vw;
-    border: solid 1px #8A42AF;
-    padding-top: 0.5vh;
+    height: 2.5vh;
+    margin-left: 1vw;
 }
 
 #tweet-count {
     position: fixed;
-    margin-top: 43vh;
+    margin-top: 38vh;
     width: 26vw;
-    text-align: center;
+    text-align: left;
     font-size: 1.4em;
     color: #8A42AF;
-    height: 3.5vh;
-    margin-left: 0.5vw;
-    border: solid 1px #8A42AF;
-    padding-top: 0.5vh;
+    height: 2.5vh;
+    margin-left: 1vw;
 }
 
 #link-bio {
     position: fixed;
-    margin-top: 48vh;
+    margin-top: 80vh;
     width: 26vw;
     text-align: center;
     font-size: 1.4em;
@@ -898,9 +900,158 @@ p {
     margin-left: 0.5vw;
     border: solid 1px #8A42AF;
     padding-top: 0.5vh;
+    display: none;
 }
 
 #link-bio:hover {
     background-color: #8A42AF;
     color: #FFF1FF;
+}
+
+.quotes {
+    color: #8A42AF;
+    padding-bottom: 15px;
+}
+
+.quotes-stick {
+    color: #FFF1FF;
+    font-size: 1.4em;
+    padding-bottom: 5px;
+    width: 33vw;
+    margin-left: 10px;
+}
+
+.work-title {
+    color: #8A42AF;
+    font-size: 1.4em;
+    font-style: italic;
+    line-height: 1.1em;
+    width: 35vw;
+    position: absolute;
+    bottom: -5%;
+}
+
+.work-title-stick {
+    color: #FFF1FF;
+    font-size: 1.4em;
+    font-style: italic;
+    line-height: 1.1em;
+    width: 23vw;
+    margin-left: 10px;
+    padding: 0;
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
+
+.credits {
+    color: #8A42AF;
+    font-size: 1.4em;
+    line-height: 0.5em;
+    margin-left: 3px;
+    margin-top: 10px;
+}
+
+.label-quote {
+    position: absolute;
+    color: #8A42AF;
+    font-size: 1.4em;
+    margin-top: 0px;
+    width: 48vw;
+    text-align: right;
+    padding-bottom: 1px;
+    border-bottom: solid 1px #8A42AF;
+}
+
+.source-link {
+    position: absolute;
+    width: 48vw;
+    text-align: right;
+    font-family: 'ArialNarrow';
+    font-size: 1.4em;
+    color: #8A42AF;
+    margin-bottom: 10px;
+    bottom: 0%;
+}
+
+#quote-sticky {
+    overflow-y: scroll;
+    width: 35%;
+    overflow: scroll;
+    position:absolute;
+    top: 0;
+    height: 250vh;
+    left: 60vw;
+}
+
+.indiv-quote-stick {
+    width: 35vw;
+    background-color:#8A42AF;
+    z-index: 4;
+    position:absolute;
+    box-shadow: 0 0 5px #8A42AF;
+}
+ 
+.indiv-quote-stick:nth-child(1) {
+    margin-top: 50vh;
+}
+.indiv-quote-stick:nth-child(2) {
+    margin-top: 100vh;
+}
+
+.indiv-quote-stick:nth-child(3) {
+    margin-top: 150vh;
+}
+
+.indiv-quote-stick:nth-child(4) {
+    margin-top:200vh;
+}
+
+.indiv-quote-stick:nth-child(5) {
+    margin-top:250vh;
+}
+
+.credits-stick {
+    color: #FFF1FF;
+    font-size: 1.4em;
+    line-height: 0.5em;
+    margin-left: 10px;
+    margin-top: 15px;
+}
+
+.label-quote-stick {
+    position: absolute;
+    color: #FFF1FF;
+    font-size: 1.4em;
+    margin-top: 5px;
+    width: 34vw;
+    text-align: right;
+    padding: 0px;
+}
+
+.source-link-stick {
+    position: absolute;
+    width: 34vw;
+    text-align: right;
+    font-family: 'ArialNarrow';
+    font-size: 1.4em;
+    color: #FFF1FF;
+    margin-bottom: 10px;
+    bottom: 0%;
+}
+
+.tweet-label {
+    position: absolute;
+    color: #8A42AF;
+    font-size: 1.4em;
+    margin-top: 0px;
+    width: 48vw;
+    text-align: right;
+    padding-bottom: 1px;
+    border-bottom: solid 1px #8A42AF;
+
+}
+
+#twit-description {
+    margin-left: 1vw;
+    margin-top: 45vh;
 }
