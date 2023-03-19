@@ -979,7 +979,7 @@ p {
     overflow: scroll;
     position:absolute;
     top: 0;
-    height: 250vh;
+    height: 440vh;
     left: 60vw;
 }
 
@@ -992,22 +992,27 @@ p {
 }
  
 .indiv-quote-stick:nth-child(1) {
-    margin-top: 50vh;
+    margin-top: 100vh;
+    position: fixed;
 }
 .indiv-quote-stick:nth-child(2) {
-    margin-top: 100vh;
+    margin-top: 180vh;
+    position: fixed;
 }
 
 .indiv-quote-stick:nth-child(3) {
-    margin-top: 150vh;
+    margin-top: 260vh;
+    position: fixed;
 }
 
 .indiv-quote-stick:nth-child(4) {
-    margin-top:200vh;
+    margin-top:340vh;
+    position: fixed;
 }
 
 .indiv-quote-stick:nth-child(5) {
-    margin-top:250vh;
+    margin-top:420vh;
+    position: fixed;
 }
 
 .credits-stick {
@@ -1023,9 +1028,11 @@ p {
     color: #FFF1FF;
     font-size: 1.4em;
     margin-top: 5px;
-    width: 34vw;
+    width: 33.5vw;
     text-align: right;
-    padding: 0px;
+    padding-bottom: 1px;
+    border-bottom: solid 1px #FFF1FF;
+    margin-left: 10px;
 }
 
 .source-link-stick {

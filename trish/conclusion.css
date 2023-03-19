@@ -11,17 +11,17 @@ body {
 
 @font-face {
     font-family: "EditorialLight";
-    src: url(/thesis/fonts/PPEditorialNew-Ultralight.otf);
+    src: url(/fonts/PPEditorialNew-Ultralight.otf);
   }
   
   @font-face {
     font-family: "EditorialLightItalic";
-    src: url(/thesis/fonts/PPEditorialNew-UltralightItalic.otf);
+    src: url(/fonts/PPEditorialNew-UltralightItalic.otf);
   }
   
   @font-face {
     font-family: "ArialNarrow";
-    src: url(/thesis/fonts/arial-narrow.ttf);
+    src: url(/fonts/arial-narrow.ttf);
   }
 
 #frame {
