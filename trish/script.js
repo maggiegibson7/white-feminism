@@ -466,7 +466,7 @@ function moveStickyThree() {
         stickyOpenThree = 1;
         stickyThreeTwo.style.marginTop = "68vh";
         stickyThreeTwo.style.animation = "interact 2s ease-in-out";
-        stickyThreeTWo.style.animationIterationCount = "infinite";
+        stickyThreeTwo.style.animationIterationCount = "infinite";
         stickyThreeTwo.style.animationDirection = "alternate";
         stickyButtonThree[1].innerHTML = "▼"
     } else if (stickyOpenThree == 1){
@@ -479,10 +479,11 @@ function moveStickyThree() {
         stickyButtonThree[1].innerHTML = "▲";
     }
 };
+//console.log(stickyButtonThree[1].innerHTML);
 stickyButtonThree[0].addEventListener("click", moveStickyThree);
 stickyButtonThree[1].addEventListener("click", moveStickyThree);
 
-var stickyButtonFour = document.querySelectorAll(".open-me-four");
+var stickyButtonFour = document.querySelector(".open-me-four");
 stickyOpenFour = 0;
 function moveStickyFour() {
     var stickyFour = document.querySelector("#sticky-four");
@@ -493,24 +494,22 @@ function moveStickyFour() {
         stickyFour.style.animation = "interact 2s ease-in-out";
         stickyFour.style.animationIterationCount = "infinite";
         stickyFour.style.animationDirection = "alternate";
-        stickyButtonFour[0].innerHTML = "▼"
+        stickyButtonFour.innerHTML = "▼"
         stickyFourTwo.style.marginTop = "68vh";
         stickyFourTwo.style.animation = "interact 2s ease-in-out";
         stickyFourTwo.style.animationIterationCount = "infinite";
         stickyFourTwo.style.animationDirection = "alternate";
-        stickyButtonFour[1].innerHTML = "▼"
     } else if (stickyOpenFour == 1){
         stickyOpenFour = 0;
         stickyFour.style.marginTop = "96vh";
         stickyFour.style.animation = "none";
-        stickyButtonFour[0].innerHTML = "▲";
+        stickyButtonFour.innerHTML = "▲";
         stickyFourTwo.style.marginTop = "96vh";
         stickyFourTwo.style.animation = "none";
-        stickyButtonFour[1].innerHTML = "▲";
     }
 };
-stickyButtonFour[0].addEventListener("click", moveStickyFour);
-stickyButtonFour[1].addEventListener("click", moveStickyFour);
+stickyButtonFour.addEventListener("click", moveStickyFour);
+//stickyButtonFour[1].addEventListener("click", moveStickyFour);
 
 var dramaButton = document.querySelector("#open-me-drama");
 var dramaContent = document.querySelector("#drama-main-content");
