@@ -1096,3 +1096,19 @@ p {
     grid-row: 1;
     margin-top: 11vh;
 }
+
+#dobrik-main {
+    font-size: 1.4em;
+    font-family: 'ArialNarrow';
+    color: #8A42AF;
+}
+
+#dobrik-side {
+    margin-top: 10px;
+    margin-left: 10px;
+    color: #8A42AF;
+}
+
+#dobrik-side p {
+    font-size: 1.4em;
+}

@@ -66,6 +66,7 @@ function beginTab() {
     trishTwitterProfile.style.display = "none";
     quoteSticky.style.display = "none";
     twitDesc.style.display = "none";
+    dobrikSide.style.display = "none";
 };
 
 function trollTab() {
@@ -92,6 +93,7 @@ function trollTab() {
     trishTwitterProfile.style.display = "none";
     quoteSticky.style.display = "none";
     twitDesc.style.display = "none";
+    dobrikSide.style.display = "none";
 };
 
 function whiteTab() {
@@ -151,6 +153,7 @@ function showSocialMedia(){
     quoteSticky.style.display = "block";
     rightSide.append(twitDesc);
     twitDesc.style.display = "block";
+    dobrikSide.style.display = "none";
 };
 
 beginButton.addEventListener("click", beginTab);
@@ -331,6 +334,7 @@ dawsonSide.style.display = "none";
 
 let dawsonActive = 0;
 let starActive = 0;
+let dobrikActive = 0;
 
 function showDawson() {
     if (dawsonActive == 0) {
@@ -346,6 +350,12 @@ function showDawson() {
         starIcon.setAttribute("class", "icon-butt");
         starLabel.style.textDecoration = "none";
         starSide.style.display = "none";
+        dobrikActive = 0;
+        dobrikMain.style.display = "none";
+        dobrikIcon.classList.remove("active-icon");
+        dobrikIcon.setAttribute("class", "icon-butt");
+        dobrikLabel.style.textDecoration = "none";
+        dobrikSide.style.display = "none";
     } else if (dawsonActive == 1) {
         dawsonActive = 0;
         dawsonMain.style.display = "none";
@@ -363,9 +373,6 @@ var starLabel = document.querySelector("#star-label");
 var starSide = document.querySelector("#star-side");
 starMain.style.display = "none";
 starSide.style.display = "none";
-
-
-
 function showStar() {
     if (starActive == 0) {
         starActive = 1;
@@ -380,6 +387,12 @@ function showStar() {
         dawsonIcon.setAttribute("class", "icon-butt");
         dawsonLabel.style.textDecoration = "none";
         dawsonSide.style.display = "none";
+        dobrikActive = 0;
+        dobrikMain.style.display = "none";
+        dobrikIcon.classList.remove("active-icon");
+        dobrikIcon.setAttribute("class", "icon-butt");
+        dobrikLabel.style.textDecoration = "none";
+        dobrikSide.style.display = "none";
     } else if (starActive == 1) {
         starActive = 0;
         starMain.style.display = "none";
@@ -390,6 +403,44 @@ function showStar() {
     }
 };
 starIcon.addEventListener("click", showStar);
+
+var dobrikIcon = document.querySelector("#dobrik-icon");
+var dobrikLabel = document.querySelector("#dobrik-label");
+var dobrikMain = document.querySelector("#dobrik-main");
+var dobrikSide = document.querySelector("#dobrik-side");
+dobrikMain.style.display = "none";
+dobrikSide.style.display = "none";
+
+function showDobrik(){
+    if (dobrikActive == 0){
+        dobrikActive = 1;
+        dobrikMain.style.display = "block";
+        dobrikIcon.setAttribute("class", "active-icon");
+        dobrikLabel.style.textDecoration = "underline";
+        rightSide.append(dobrikSide);
+        dobrikSide.style.display = "block";
+        dawsonActive = 0;
+        dawsonMain.style.display = "none";
+        dawsonIcon.classList.remove("active-icon");
+        dawsonIcon.setAttribute("class", "icon-butt");
+        dawsonLabel.style.textDecoration = "none";
+        dawsonSide.style.display = "none";
+        starActive = 0;
+        starMain.style.display = "none";
+        starIcon.classList.remove("active-icon");
+        starIcon.setAttribute("class", "icon-butt");
+        starLabel.style.textDecoration = "none";
+        starSide.style.display = "none";
+    } else if (dobrikActive == 1){
+        dobrikActive = 0;
+        dobrikMain.style.display = "none";
+        dobrikIcon.classList.remove("active-icon");
+        dobrikIcon.setAttribute("class", "icon-butt");
+        dobrikLabel.style.textDecoration = "none";
+        dobrikSide.style.display = "none";
+    }
+};
+dobrikIcon.addEventListener("click", showDobrik);
 
 var stickyButtonOne = document.querySelectorAll(".open-me-one");
 stickyOpenOne = 0;
@@ -758,7 +809,7 @@ fetch('https://twitter135.p.rapidapi.com/UserTweets/?id=27252380&count=40', opti
                 var tweetType = tweeter.content.entryType;
                 var voidTest = tweeter.entryId;
                 if (tweetType == 'TimelineTimelineItem'){
-                    if (voidTest == "tweet-1637116155692453889"||voidTest == "tweet-1636939562483322880"){
+                    if (voidTest == "tweet-1637116155692453889"||voidTest == "tweet-1636939562483322880"|| voidTest=="tweet-1637451515345666048"){
                         fetch('./text-based-data-trish.json')
                         .then((response) => response.json())
                         .then(function (response) {
@@ -1188,9 +1239,9 @@ function doubleScroll(){
     var winScroll = mainArea.scrollTop;
     var height = mainArea.scrollHeight - mainArea.clientHeight;
     var scrolled = (winScroll / height) * 100;
-    console.log(scrolled);
+    //console.log(scrolled);
     let newScrollDistance = map(scrolled, 0, 100, 0, quoteSticky.scrollHeight);
-    console.log(newScrollDistance);
+    //console.log(newScrollDistance);
     stickArray[0].style.marginTop = `calc(100vh - ${newScrollDistance}px)`;
     stickArray[1].style.marginTop = `calc(180vh - ${newScrollDistance}px)`;
     stickArray[2].style.marginTop = `calc(260vh - ${newScrollDistance}px)`;
