@@ -800,6 +800,10 @@ fetch('https://twitter135.p.rapidapi.com/UserTweets/?id=27252380&count=40', opti
                 trishTwitterProfile.appendChild(profileDisplay);
             };
         };
+        //trishTweets.forEach(element => {
+
+        //})
+       // console.log(dataFilter);
         userData(); //check API tomorrow and see if documentation is correct; issue with void entries appearing; stopping at tweeter.content.tweet_results
         function appendTweets(){
             trishTweets.forEach((tweeter)=> {
@@ -808,64 +812,12 @@ fetch('https://twitter135.p.rapidapi.com/UserTweets/?id=27252380&count=40', opti
                 myDiv.classList.add("tweets");
                 var tweetType = tweeter.content.entryType;
                 var voidTest = tweeter.entryId;
+                console.log(tweeter.content.itemContent);
+                var voidTesting = tweeter.content.itemContent;
+                //voidTest == "tweet-1637116155692453889"||voidTest == "tweet-1636939562483322880"|| voidTest=="tweet-1637451515345666048" || voidTest=="tweet-1637451754022518784"|| voidTest=="tweet-1637116632408682498"
                 if (tweetType == 'TimelineTimelineItem'){
-                    if (voidTest == "tweet-1637116155692453889"||voidTest == "tweet-1636939562483322880"|| voidTest=="tweet-1637451515345666048"){
-                        fetch('./text-based-data-trish.json')
-                        .then((response) => response.json())
-                        .then(function (response) {
-                            //console.log(response);
-                            //console.log(response[0].Author);
-
-                            kaoArray = new Array();
-                            kaoArray[0] = "(⊃｡•́‿•̀｡)⊃"
-                            kaoArray[1] = "ヾ(=`ω´=)ノ”"
-                            kaoArray[2] = "ʕ·ᴥ·　ʔ"
-                            kaoArray[3] = "(๑´• .̫ •ू`๑)"
-                            kaoArray[4] = "｡ﾟ( ﾟஇ‸இﾟ)ﾟ｡"
-                            kaoArray[5] = "｡ﾟ(*´□`)ﾟ｡"
-                            kaoArray[6] = "(^.~)☆"
-                            kaoArray[7] = "	°˖✧◝(⁰▿⁰)◜✧˖°"
-                            kaoArray[8] = "(๑˘︶˘๑)"
-                            kaoArray[9] = "	(´｡• ω •｡`)"
-
-                            var labelDom = document.createElement("p");
-                            var randomKao = kaoArray[Math.floor(Math.random()*kaoArray.length)];
-                            labelDom.innerText = `quote deck entry ${randomKao}`;
-                            labelDom.classList.add('label-quote');
-                            myDiv.append(labelDom);
-
-                            var randomBox = Math.floor(Math.random() * response.length);
-                            
-                            var authorName = response[randomBox].Author;
-                            var yearPub = response[randomBox].Date;
-                            var credits = document.createElement("p");
-                            credits.innerText = `${authorName}, ${yearPub}`
-                            credits.classList.add("credits");
-                            myDiv.append(credits);
-
-                            var quoteText = document.createElement("h2");
-                            var quoteTextConsole = response[randomBox].Evidence;
-                            quoteText.innerText = `"${quoteTextConsole}"`;
-                            myDiv.appendChild(quoteText);
-                            quoteText.classList.add("quotes");
-                            
-                            var workTitle = document.createElement("p");
-                            workTitle.innerText = `${response[randomBox].Title}`;
-                            workTitle.classList.add("work-title");
-                            myDiv.append(workTitle);
-
-                            var linkTitle = document.createTextNode("source link◜✧˖°");
-                            var a = document.createElement("a");
-                            a.appendChild(linkTitle);
-                            a.href = response[randomBox].Link;
-                            a.title = linkTitle;
-                            //console.log(a);
-                            myDiv.append(a);
-                            a.classList.add("source-link");
-                        });
-                        return; 
-                    };
                     function contentLoad() {
+                    if (voidTesting !== '' ){
                         var reTweetTest = tweeter.content.itemContent.tweet_results.result;
                         if (reTweetTest.hasOwnProperty('tweet')){ //Retweeted from someone else
                             var randomKao = kaoArray[Math.floor(Math.random()*kaoArray.length)];
@@ -1097,13 +1049,70 @@ fetch('https://twitter135.p.rapidapi.com/UserTweets/?id=27252380&count=40', opti
                             } else {
                                 return;
                             };
-                            //load number of likes and number of retweets
+                            
                             
 
                         };
+                         
+                    } else {
+                                            
+                        fetch('./text-based-data-trish.json')
+                        .then((response) => response.json())
+                        .then(function (response) {
+                            //console.log(response);
+                            //console.log(response[0].Author);
 
+                            kaoArray = new Array();
+                            kaoArray[0] = "(⊃｡•́‿•̀｡)⊃"
+                            kaoArray[1] = "ヾ(=`ω´=)ノ”"
+                            kaoArray[2] = "ʕ·ᴥ·　ʔ"
+                            kaoArray[3] = "(๑´• .̫ •ू`๑)"
+                            kaoArray[4] = "｡ﾟ( ﾟஇ‸இﾟ)ﾟ｡"
+                            kaoArray[5] = "｡ﾟ(*´□`)ﾟ｡"
+                            kaoArray[6] = "(^.~)☆"
+                            kaoArray[7] = "	°˖✧◝(⁰▿⁰)◜✧˖°"
+                            kaoArray[8] = "(๑˘︶˘๑)"
+                            kaoArray[9] = "	(´｡• ω •｡`)"
+
+                            var labelDom = document.createElement("p");
+                            var randomKao = kaoArray[Math.floor(Math.random()*kaoArray.length)];
+                            labelDom.innerText = `quote deck entry ${randomKao}`;
+                            labelDom.classList.add('label-quote');
+                            myDiv.append(labelDom);
+
+                            var randomBox = Math.floor(Math.random() * response.length);
+                            
+                            var authorName = response[randomBox].Author;
+                            var yearPub = response[randomBox].Date;
+                            var credits = document.createElement("p");
+                            credits.innerText = `${authorName}, ${yearPub}`
+                            credits.classList.add("credits");
+                            myDiv.append(credits);
+
+                            var quoteText = document.createElement("h2");
+                            var quoteTextConsole = response[randomBox].Evidence;
+                            quoteText.innerText = `"${quoteTextConsole}"`;
+                            myDiv.appendChild(quoteText);
+                            quoteText.classList.add("quotes");
+                            
+                            var workTitle = document.createElement("p");
+                            workTitle.innerText = `${response[randomBox].Title}`;
+                            workTitle.classList.add("work-title");
+                            myDiv.append(workTitle);
+
+                            var linkTitle = document.createTextNode("source link◜✧˖°");
+                            var a = document.createElement("a");
+                            a.appendChild(linkTitle);
+                            a.href = response[randomBox].Link;
+                            a.title = linkTitle;
+                            //console.log(a);
+                            myDiv.append(a);
+                            a.classList.add("source-link");
+                            return;
+                        });
                     };
-                    contentLoad();
+                }; contentLoad();
+                    
                 } else {
                     fetch('./text-based-data-trish.json')
                         .then((response) => response.json())
