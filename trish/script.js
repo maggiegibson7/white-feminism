@@ -814,10 +814,73 @@ fetch('https://twitter135.p.rapidapi.com/UserTweets/?id=27252380&count=40', opti
                 var voidTest = tweeter.entryId;
                 console.log(tweeter.content.itemContent);
                 var voidTesting = tweeter.content.itemContent;
-                //voidTest == "tweet-1637116155692453889"||voidTest == "tweet-1636939562483322880"|| voidTest=="tweet-1637451515345666048" || voidTest=="tweet-1637451754022518784"|| voidTest=="tweet-1637116632408682498"
+                console.log(voidTest.hasOwnProperty('tweet_results') == false);
+                console.log(voidTesting);
+                const index = trishTweets.indexOf(tweeter);
+                
                 if (tweetType == 'TimelineTimelineItem'){
                     function contentLoad() {
-                    if (voidTesting !== '' ){
+                        if (voidTesting != undefined){
+                        if (voidTest == "tweet-1637451754022518784" ||voidTest =="tweet-1637451515345666048" || voidTest=="tweet-1637116632408682498"|| voidTest == "tweet-1636939562483322880" || voidTest == "tweet-1636939994375012357") {
+                        fetch('./text-based-data-trish.json')
+                        .then((response) => response.json())
+                        .then(function (response) {
+                            console.log(voidTest);
+                            //console.log(response);
+                            //console.log(response[0].Author);
+                            console.log('is this working');
+                            kaoArray = new Array();
+                            kaoArray[0] = "(⊃｡•́‿•̀｡)⊃"
+                            kaoArray[1] = "ヾ(=`ω´=)ノ”"
+                            kaoArray[2] = "ʕ·ᴥ·　ʔ"
+                            kaoArray[3] = "(๑´• .̫ •ू`๑)"
+                            kaoArray[4] = "｡ﾟ( ﾟஇ‸இﾟ)ﾟ｡"
+                            kaoArray[5] = "｡ﾟ(*´□`)ﾟ｡"
+                            kaoArray[6] = "(^.~)☆"
+                            kaoArray[7] = "	°˖✧◝(⁰▿⁰)◜✧˖°"
+                            kaoArray[8] = "(๑˘︶˘๑)"
+                            kaoArray[9] = "	(´｡• ω •｡`)"
+
+                            var labelDom = document.createElement("p");
+                            var randomKao = kaoArray[Math.floor(Math.random()*kaoArray.length)];
+                            labelDom.innerText = `quote deck entry ${randomKao}`;
+                            labelDom.classList.add('label-quote');
+                            myDiv.append(labelDom);
+                            console.log(labelDom);
+
+                            var randomBox = Math.floor(Math.random() * response.length);
+                            
+                            var authorName = response[randomBox].Author;
+                            var yearPub = response[randomBox].Date;
+                            var credits = document.createElement("p");
+                            credits.innerText = `${authorName}, ${yearPub}`
+                            credits.classList.add("credits");
+                            myDiv.append(credits);
+
+                            var quoteText = document.createElement("h2");
+                            var quoteTextConsole = response[randomBox].Evidence;
+                            quoteText.innerText = `"${quoteTextConsole}"`;
+                            myDiv.appendChild(quoteText);
+                            quoteText.classList.add("quotes");
+                            
+                            var workTitle = document.createElement("p");
+                            workTitle.innerText = `${response[randomBox].Title}`;
+                            workTitle.classList.add("work-title");
+                            myDiv.append(workTitle);
+
+                            var linkTitle = document.createTextNode("source link◜✧˖°");
+                            var a = document.createElement("a");
+                            a.appendChild(linkTitle);
+                            a.href = response[randomBox].Link;
+                            a.title = linkTitle;
+                            //console.log(a);
+                            myDiv.append(a);
+                            a.classList.add("source-link");
+                            
+                            return null;
+                        }); return;
+
+                    };
                         var reTweetTest = tweeter.content.itemContent.tweet_results.result;
                         if (reTweetTest.hasOwnProperty('tweet')){ //Retweeted from someone else
                             var randomKao = kaoArray[Math.floor(Math.random()*kaoArray.length)];
@@ -921,11 +984,11 @@ fetch('https://twitter135.p.rapidapi.com/UserTweets/?id=27252380&count=40', opti
                                         myDiv.append(videoBox);
                                         //console.log(videoBox);
                                     }
-
+                                    return null;
                                 });
                             } else {
                                 return null;
-                            };
+                            }; 
                         
                         } else { //normal tweet
                             //loading tweeter and user data
@@ -1051,7 +1114,7 @@ fetch('https://twitter135.p.rapidapi.com/UserTweets/?id=27252380&count=40', opti
                             };
                             
                             
-
+                        
                         };
                          
                     } else {
