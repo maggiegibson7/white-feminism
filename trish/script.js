@@ -847,16 +847,23 @@ fetch('https://twitter135.p.rapidapi.com/UserTweets/?id=27252380&count=40', opti
                 myDiv.classList.add("tweets");
                 var tweetType = tweeter.content.entryType;
                 var voidTest = tweeter.entryId;
-                console.log(tweeter.content.itemContent);
+                //console.log(tweeter.content.itemContent);
                 var voidTesting = tweeter.content.itemContent;
-                console.log(voidTest.hasOwnProperty('tweet_results') == false);
-                console.log(voidTesting);
+                //console.log(voidTest.hasOwnProperty('tweet_results') == false);
+                //console.log(voidTesting);
                 const index = trishTweets.indexOf(tweeter);
                 
+                
+                if (tweetType == 'TimelineTimelineCursor'){
+                    console.log('caught it!')
+                    return;
+                }
+                
+                const adult = tweeter.content.itemContent.itemType;
                 if (tweetType == 'TimelineTimelineItem'){
                     function contentLoad() {
                         if (voidTesting != undefined){
-                        if (voidTest == "tweet-1637451754022518784" ||voidTest =="tweet-1637451515345666048" || voidTest=="tweet-1637116632408682498"|| voidTest == "tweet-1636939562483322880" || voidTest == "tweet-1636939994375012357") {
+                        if (voidTest == "tweet-1637451754022518784" ||voidTest =="tweet-1637451515345666048" || voidTest=="tweet-1637116632408682498"|| voidTest == "tweet-1636939562483322880" || voidTest == "tweet-1636939994375012357"||adult == "TimelineTombstone") {
                         fetch('./text-based-data-trish.json')
                         .then((response) => response.json())
                         .then(function (response) {
@@ -881,7 +888,7 @@ fetch('https://twitter135.p.rapidapi.com/UserTweets/?id=27252380&count=40', opti
                             labelDom.innerText = `quote deck entry ${randomKao}`;
                             labelDom.classList.add('label-quote');
                             myDiv.append(labelDom);
-                            console.log(labelDom);
+                            //console.log(labelDom);
 
                             var randomBox = Math.floor(Math.random() * response.length);
                             
@@ -1387,6 +1394,7 @@ function showRacism(){
         showRacismButton.classList.add('tag-active');
         showRacismButton.classList.remove('closed-content');
         showRacismButton.style.color = '#8A42AF';
+        showRacismButton.style.textDecoration = 'underline';
     } else if (racismShowing == 1){
         racismShowing = 0;
         racismContent.style.display = 'none';
@@ -1396,6 +1404,7 @@ function showRacism(){
         showRacismButton.style.border = '1px solid #8A42AF';
         showRacismButton.classList.remove('tag-active');
         showRacismButton.classList.add('closed-content');
+        showRacismButton.style.textDecoration = 'none';
     }
 }
 
@@ -1412,6 +1421,7 @@ function showHomophobia(){
         showHomoButton.classList.add('tag-active');
         showHomoButton.classList.remove('closed-content');
         showHomoButton.style.color = '#8A42AF';
+        showHomoButton.style.textDecoration = 'underline';
     } else if (homophobiaShowing == 1){
         homophobiaShowing = 0;
         homophobiaContent.style.display = 'none';
@@ -1421,6 +1431,7 @@ function showHomophobia(){
         showHomoButton.style.border = '1px solid #8A42AF';
         showHomoButton.classList.remove('tag-active');
         showHomoButton.classList.add('closed-content');
+        showHomoButton.style.textDecoration = 'none';
     }
 }
 
