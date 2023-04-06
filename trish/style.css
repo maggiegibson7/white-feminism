@@ -1112,3 +1112,94 @@ p {
 #dobrik-side p {
     font-size: 1.4em;
 }
+
+.closed-content {
+    width: 48vw;
+    border: 1px solid #8A42AF;
+    color: #8A42AF;
+    padding: 5px;
+}
+
+.closed-content:hover {
+    box-shadow: 0 0 5px #8A42AF;
+    cursor: pointer;
+}
+
+.open-content {
+    max-width: 48vw;
+    color: #8A42AF;
+    font-size: 1.4em;
+}
+
+.open-content img {
+    width: 40vw;
+    height: auto;
+    box-shadow: 0 0 5px #8A42AF;
+    margin-left: 5px;
+}
+
+.open-content video {
+    width: 40vw;
+    box-shadow: 0 0 5px #8A42AF;
+    margin-left: 5px;
+}
+
+.open-content iframe {
+    width: 40vw;
+    box-shadow: 0 0 5px #8A42AF;
+    margin-left: 5px;
+    height: 23vw;
+}
+
+.right-side-open {
+    margin-left: 10px;
+    font-size: 1.4em;
+    color: #8A42AF;
+    max-width: 25vw;
+    padding: 5px;
+}
+
+.right-side-open video {
+    max-width: 25vw;
+    box-shadow: 0 0 5px #8A42AF;
+}
+
+.right-side-open img {
+    max-width: 25vw;
+    box-shadow: 0 0 5px #8A42AF;
+}
+
+.right-side-open iframe {
+    max-width: 25vw;
+    box-shadow: 0 0 5px #8A42AF;
+    height: 25vh;
+}
+
+.right-side-open figure {
+    padding: 0;
+    margin-bottom: 5px;
+    margin-left: 0;
+    font-family: ArialNarrow;
+}
+
+.tag-active {
+    text-shadow: 0 0 5px #8A42AF;
+    animation: glowactive ease-in-out 2s alternate;
+    animation-iteration-count: infinite;
+}
+
+@keyframes glowactive {
+    from {
+      opacity: 100%;
+      text-shadow: 0 0 1px #8A42AF;
+    }
+    to {
+      opacity: 100%;
+      text-shadow: 0 0 10px #8A42AF;
+    }
+  }
+
+  .tag-active:hover {
+    transform: translateX(10px);
+    cursor: pointer;
+  }

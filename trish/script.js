@@ -34,7 +34,8 @@ const progressInd = document.querySelector(".progress-container")
 const whiteInfo = document.querySelector("#white-men");
 var socialMediaPage = document.querySelector("#social-media");
 const trishTwitterProfile = document.querySelector("#trish-twitter-profile");
-
+const roughStart = document.querySelector("#rough-start");
+roughStart.style.display = 'none';
 socialMediaPage.style.display = "none";
 whiteInfo.style.display = "none";
 const stickyBankOne = document.querySelector("#sticky-bank-one");
@@ -67,6 +68,7 @@ function beginTab() {
     quoteSticky.style.display = "none";
     twitDesc.style.display = "none";
     dobrikSide.style.display = "none";
+    roughStart.style.display = 'none';
 };
 
 function trollTab() {
@@ -94,6 +96,7 @@ function trollTab() {
     quoteSticky.style.display = "none";
     twitDesc.style.display = "none";
     dobrikSide.style.display = "none";
+    roughStart.style.display = 'none';
 };
 
 function whiteTab() {
@@ -122,6 +125,7 @@ function whiteTab() {
     trishTwitterProfile.style.display = "none";
     quoteSticky.style.display = "none";
     twitDesc.style.display = "none";
+    roughStart.style.display = 'none';
 }
 
 function showSocialMedia(){
@@ -154,12 +158,43 @@ function showSocialMedia(){
     rightSide.append(twitDesc);
     twitDesc.style.display = "block";
     dobrikSide.style.display = "none";
+    roughStart.style.display = 'none';
 };
+
+function roughTab(){
+    mainArea.append(roughStart);
+    roughStart.style.display = 'block';
+    whiteInfo.style.display = "none";
+    document.querySelector("#summary").style.display = "none";
+    trollInfo.style.display = "none";
+    beginInfo.style.display = "none";
+    familyContent.style.display = "none";
+    stripperContent.style.display = "none";
+    youtubeContent.style.display = "none";
+    religionContent.style.display = "none";
+    filmContent.style.display = "none";
+    icon.style.display = "none";
+    progressInd.style.display = "none";
+    timeLine.style.display = "none";
+    home.style.display = "none";
+    controversyContent.style.display = "none";
+    mentalHealthContent.style.display = "none";
+    attentionContent.style.display = "none";
+    bodyImgContent.style.display = "none";
+    stickyBankOne.style.display = "none";
+    wholeDrama.style.display = "none";
+    stickyBankTwo.style.display = "none";
+    socialMediaPage.style.display = "none";
+    trishTwitterProfile.style.display = "none";
+    quoteSticky.style.display = "none";
+    twitDesc.style.display = "none";
+}
 
 beginButton.addEventListener("click", beginTab);
 trollButton.addEventListener("click", trollTab);
 dawsonButton.addEventListener("click", whiteTab);
 currentButton.addEventListener("click", showSocialMedia);
+controButton.addEventListener('click', roughTab);
 
 const moveText = document.querySelectorAll('.animated-text');
 
@@ -1322,3 +1357,71 @@ function doubleScroll(){
     console.log(stickArray[0].style.marginTop);
 };
 mainArea.onscroll = function() {doubleScroll()};
+
+var racismContent = document.querySelector("#racism-open-content");
+var showRacismButton = document.querySelector("#racism-button");
+var racismRightSide = document.querySelector("#racism-right-side");
+
+let racismShowing = 0;
+racismContent.style.display = 'none';
+rightSide.appendChild(racismRightSide);
+racismRightSide.style.display = 'none';
+
+var homophobiaContent = document.querySelector("#homophobia-open-content");
+var showHomoButton = document.querySelector("#homophobia-button");
+var homophobiaRightSide = document.querySelector("#homophobia-right-side");
+
+let homophobiaShowing = 0;
+homophobiaContent.style.display = 'none';
+rightSide.appendChild(homophobiaRightSide);
+homophobiaRightSide.style.display = 'none';
+
+function showRacism(){
+    if (racismShowing == 0){
+        racismShowing = 1;
+        racismContent.style.display = 'block';
+        racismRightSide.style.display = 'block';
+        showRacismButton.innerHTML = "☆ｏ(＞＜；)○ ↓";
+        showRacismButton.style.fontSize = '4em';
+        showRacismButton.style.border = 'none';
+        showRacismButton.classList.add('tag-active');
+        showRacismButton.classList.remove('closed-content');
+        showRacismButton.style.color = '#8A42AF';
+    } else if (racismShowing == 1){
+        racismShowing = 0;
+        racismContent.style.display = 'none';
+        racismRightSide.style.display = 'none';
+        showRacismButton.innerHTML = 'Racism';
+        showRacismButton.style.fontSize = '2em';
+        showRacismButton.style.border = '1px solid #8A42AF';
+        showRacismButton.classList.remove('tag-active');
+        showRacismButton.classList.add('closed-content');
+    }
+}
+
+showRacismButton.addEventListener('click', showRacism);
+
+function showHomophobia(){
+    if (homophobiaShowing == 0){
+        homophobiaShowing = 1;
+        homophobiaContent.style.display = 'block';
+        homophobiaRightSide.style.display = 'block';
+        showHomoButton.innerHTML = "☆ｏ(＞＜；)○ ↓";
+        showHomoButton.style.fontSize = '4em';
+        showHomoButton.style.border = 'none';
+        showHomoButton.classList.add('tag-active');
+        showHomoButton.classList.remove('closed-content');
+        showHomoButton.style.color = '#8A42AF';
+    } else if (homophobiaShowing == 1){
+        homophobiaShowing = 0;
+        homophobiaContent.style.display = 'none';
+        homophobiaRightSide.style.display = 'none';
+        showHomoButton.innerHTML = 'Homophobia';
+        showHomoButton.style.fontSize = '2em';
+        showHomoButton.style.border = '1px solid #8A42AF';
+        showHomoButton.classList.remove('tag-active');
+        showHomoButton.classList.add('closed-content');
+    }
+}
+
+showHomoButton.addEventListener('click', showHomophobia);
