@@ -197,45 +197,33 @@ h1 {
     display: block;
     position: absolute;
     margin-top: 8vh;
-    margin-left: 25vw;
+    margin-left: 10vw;
     z-index: -1;
 }
 
-#queer-info-active {
-    margin-left: 18vw;
-    margin-top: 13vh;
-    width: 21vw;
-    padding: 10px;
-    position: absolute;
+#info-block {
+    padding-top: 0;
     background-color: #FFF1FF;
     border: 1px solid #8A42AF;
-}
-
-#victim-info-active {
-    margin-left: 45vw;
-    width: 18.5vw;
-    margin-top: 7vh;
+    height: 50vh;
+    width: 20vw;
     position: absolute;
-    background-color: #FFF1FF;
-    border: 1px solid #8A42AF;
-    padding: 10px;
+    left: 61vw;
+    top: 210vh;
+    box-shadow: 0 0 5px #8A42AF;
+    padding-left: 5px;
+    padding-right: 5px;
+    overflow: scroll;
 }
 
-#exploit-info-active {
-    width: 25vw;
-    position: absolute;
-
-    margin-left: 65vw;
-    margin-top: 21vh;
-    background-color: #FFF1FF;
-    border: 1px solid #8A42AF;
-    padding: 10px;
+#instruc {
+    text-align: center;
+    margin-top: 50%;
 }
-
 .tag {
     position: absolute;
     color:#FFF1FF;
-    font-family: "EditorialRegular";
+    font-family: "EditorialItalic";
     font-size: 2em;
     line-height: 1em;
     background-color:#8A42AF;
@@ -244,22 +232,28 @@ h1 {
     z-index: 2;
 }
 
+.tag:hover {
+    transform: scale(1.2);
+    text-shadow: 0 0 5px #FFF1FF;
+    cursor: pointer;
+}
+
 #exploit-tag {
     width: 26vw;
     border: 5px solid #8A42AF;
-    margin-left: 65vw;
+    margin-left: 50vw;
     margin-top: 13vh;
 }
 
 #victim-tag {
     border: 5px solid #8A42AF;
-    margin-left: 45vw;
+    margin-left: 30vw;
     width: 19.5vw;
 }
 
 #queer-tag {
     border: 5px solid #8A42AF;
-    margin-left: 18vw;
+    margin-left: 3vw;
     margin-top: 9vh;
     width: 22vw;
 }

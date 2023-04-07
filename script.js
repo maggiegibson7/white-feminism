@@ -48,6 +48,8 @@ var exploitInfo = document.querySelector("#exploit-info-notactive");
 var queerInfo = document.querySelector("#queer-info-notactive");
 var victimInfo = document.querySelector("#victim-info-notactive");
 
+var instru = document.querySelector("#instruc");
+
 exploitActive = 0;
 function showExploit() {
     if (exploitActive == 0){
@@ -55,10 +57,18 @@ function showExploit() {
         exploitActive = 1;
         exploitInfo.removeAttribute('id');
         exploitInfo.id = "exploit-info-active";
+        instru.style.display = 'none';
+
+        victimInfo.removeAttribute('id');
+        victimInfo.id = "victim-info-notactive";
+
+        queerInfo.removeAttribute('id');
+        queerInfo.id = "queer-info-notactive";
     } else if (exploitActive == 1){
         exploitActive = 0;
         exploitInfo.removeAttribute('id');
         exploitInfo.id = "exploit-info-notactive";
+        instru.style.display = 'block';
     }
 };
 exploitButton.addEventListener("click", showExploit);
@@ -69,10 +79,19 @@ function showVictim() {
         victimActive = 1;
         victimInfo.removeAttribute('id');
         victimInfo.id = "victim-info-active";
+
+        queerInfo.removeAttribute('id');
+        queerInfo.id = "queer-info-notactive";
+
+        exploitInfo.removeAttribute('id');
+        exploitInfo.id = "exploit-info-notactive";
+
+        instru.style.display = 'none';
     } else if (victimActive == 1){
         victimActive = 0;
         victimInfo.removeAttribute('id');
         victimInfo.id = "victim-info-notactive";
+        instru.style.display = 'block';
     }
 };
 victimButton.addEventListener("click", showVictim);
@@ -83,10 +102,19 @@ function showQueer() {
         queerActive = 1;
         queerInfo.removeAttribute('id');
         queerInfo.id = "queer-info-active";
+
+        victimInfo.removeAttribute('id');
+        victimInfo.id = "victim-info-notactive";
+        instru.style.display = 'none';
+
+        exploitInfo.removeAttribute('id');
+        exploitInfo.id = "exploit-info-notactive";
+
     } else if (queerActive == 1){
         queerActive = 0;
         queerInfo.removeAttribute('id');
         queerInfo.id = "queer-info-notactive";
+        instru.style.display = 'block';
     }
 };
 queerButton.addEventListener("click", showQueer);
