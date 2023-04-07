@@ -69,6 +69,15 @@ function beginTab() {
     twitDesc.style.display = "none";
     dobrikSide.style.display = "none";
     roughStart.style.display = 'none';
+
+    honMenRightSide.style.display = 'none';
+    honMenContent.style.display = 'none';
+    antiSContent.style.display = 'none';
+    antiSRightSide.style.display = 'none';
+    homophobiaRightSide.style.display = 'none';
+    homophobiaContent.style.display = 'none';
+    racismRightSide.style.display = 'none';
+    racismContent.style.display = 'none';
 };
 
 function trollTab() {
@@ -97,6 +106,14 @@ function trollTab() {
     twitDesc.style.display = "none";
     dobrikSide.style.display = "none";
     roughStart.style.display = 'none';
+    honMenRightSide.style.display = 'none';
+    honMenContent.style.display = 'none';
+    antiSContent.style.display = 'none';
+    antiSRightSide.style.display = 'none';
+    homophobiaRightSide.style.display = 'none';
+    homophobiaContent.style.display = 'none';
+    racismRightSide.style.display = 'none';
+    racismContent.style.display = 'none';
 };
 
 function whiteTab() {
@@ -126,6 +143,14 @@ function whiteTab() {
     quoteSticky.style.display = "none";
     twitDesc.style.display = "none";
     roughStart.style.display = 'none';
+    honMenRightSide.style.display = 'none';
+    honMenContent.style.display = 'none';
+    antiSContent.style.display = 'none';
+    antiSRightSide.style.display = 'none';
+    homophobiaRightSide.style.display = 'none';
+    homophobiaContent.style.display = 'none';
+    racismRightSide.style.display = 'none';
+    racismContent.style.display = 'none';
 }
 
 function showSocialMedia(){
@@ -159,6 +184,14 @@ function showSocialMedia(){
     twitDesc.style.display = "block";
     dobrikSide.style.display = "none";
     roughStart.style.display = 'none';
+    honMenRightSide.style.display = 'none';
+    honMenContent.style.display = 'none';
+    antiSContent.style.display = 'none';
+    antiSRightSide.style.display = 'none';
+    homophobiaRightSide.style.display = 'none';
+    homophobiaContent.style.display = 'none';
+    racismRightSide.style.display = 'none';
+    racismContent.style.display = 'none';
 };
 
 function roughTab(){
@@ -1383,6 +1416,25 @@ homophobiaContent.style.display = 'none';
 rightSide.appendChild(homophobiaRightSide);
 homophobiaRightSide.style.display = 'none';
 
+var antiSContent = document.querySelector("#anti-semitism-open-content");
+var antiSButton = document.querySelector("#anti-s-button");
+var antiSRightSide = document.querySelector("#semitism-right-side");
+
+let antiSDisplay = 0;
+antiSContent.style.display = 'none';
+rightSide.appendChild(antiSRightSide);
+antiSRightSide.style.display = 'none';
+
+var honMenContent = document.querySelector("#hon-men-open-content");
+var honMenButton = document.querySelector("#hon-men-button");
+var honMenRightSide = document.querySelector("#hon-men-right-side");
+
+let honMenShowing = 0;
+honMenContent.style.display = 'none';
+rightSide.appendChild(honMenRightSide);
+honMenRightSide.style.display = 'none';
+
+
 function showRacism(){
     if (racismShowing == 0){
         racismShowing = 1;
@@ -1395,6 +1447,37 @@ function showRacism(){
         showRacismButton.classList.remove('closed-content');
         showRacismButton.style.color = '#8A42AF';
         showRacismButton.style.textDecoration = 'underline';
+
+        homophobiaShowing = 0;
+        homophobiaContent.style.display = 'none';
+        homophobiaRightSide.style.display = 'none';
+        showHomoButton.innerHTML = 'Homophobia';
+        showHomoButton.style.fontSize = '2em';
+        showHomoButton.style.border = '1px solid #8A42AF';
+        showHomoButton.classList.remove('tag-active');
+        showHomoButton.classList.add('closed-content');
+        showHomoButton.style.textDecoration = 'none';
+
+        antiSDisplay = 0;
+        antiSContent.style.display = 'none';
+        antiSRightSide.style.display = 'none';
+        antiSButton.innerHTML = 'Anti-Semitism';
+        antiSButton.style.fontSize = '2em';
+        antiSButton.style.border = '1px solid #8A42AF';
+        antiSButton.classList.remove('tag-active');
+        antiSButton.classList.add('closed-content');
+        antiSButton.style.textDecoration = 'none';
+
+        honMenShowing = 0;
+        honMenContent.style.display = 'none';
+        honMenRightSide.style.display = 'none';
+        honMenButton.innerHTML = 'Honorable Mentions';
+        honMenButton.style.fontSize = '2em';
+        honMenButton.style.border = '1px solid #8A42AF';
+        honMenButton.classList.remove('tag-active');
+        honMenButton.classList.add('closed-content');
+        honMenButton.style.textDecoration = 'none';
+
     } else if (racismShowing == 1){
         racismShowing = 0;
         racismContent.style.display = 'none';
@@ -1422,6 +1505,37 @@ function showHomophobia(){
         showHomoButton.classList.remove('closed-content');
         showHomoButton.style.color = '#8A42AF';
         showHomoButton.style.textDecoration = 'underline';
+
+        racismShowing = 0;
+        racismContent.style.display = 'none';
+        racismRightSide.style.display = 'none';
+        showRacismButton.innerHTML = 'Racism';
+        showRacismButton.style.fontSize = '2em';
+        showRacismButton.style.border = '1px solid #8A42AF';
+        showRacismButton.classList.remove('tag-active');
+        showRacismButton.classList.add('closed-content');
+        showRacismButton.style.textDecoration = 'none';
+
+        antiSDisplay = 0;
+        antiSContent.style.display = 'none';
+        antiSRightSide.style.display = 'none';
+        antiSButton.innerHTML = 'Anti-Semitism';
+        antiSButton.style.fontSize = '2em';
+        antiSButton.style.border = '1px solid #8A42AF';
+        antiSButton.classList.remove('tag-active');
+        antiSButton.classList.add('closed-content');
+        antiSButton.style.textDecoration = 'none';
+
+        honMenShowing = 0;
+        honMenContent.style.display = 'none';
+        honMenRightSide.style.display = 'none';
+        honMenButton.innerHTML = 'Honorable Mentions';
+        honMenButton.style.fontSize = '2em';
+        honMenButton.style.border = '1px solid #8A42AF';
+        honMenButton.classList.remove('tag-active');
+        honMenButton.classList.add('closed-content');
+        honMenButton.style.textDecoration = 'none';
+
     } else if (homophobiaShowing == 1){
         homophobiaShowing = 0;
         homophobiaContent.style.display = 'none';
@@ -1436,3 +1550,119 @@ function showHomophobia(){
 }
 
 showHomoButton.addEventListener('click', showHomophobia);
+
+function showAntiS(){
+    if (antiSDisplay == 0){
+        antiSDisplay = 1;
+        antiSContent.style.display = 'block';
+        antiSRightSide.style.display = 'block';
+        antiSButton.innerHTML = "☆ｏ(＞＜；)○ ↓";
+        antiSButton.style.fontSize = '4em';
+        antiSButton.style.border = 'none';
+        antiSButton.classList.add('tag-active');
+        antiSButton.classList.remove('closed-content');
+        antiSButton.style.color = '#8A42AF';
+        antiSButton.style.textDecoration = 'underline';
+
+        homophobiaContent.style.display = 'none';
+        homophobiaRightSide.style.display = 'none';
+        showHomoButton.innerHTML = 'Homophobia';
+        showHomoButton.style.fontSize = '2em';
+        showHomoButton.style.border = '1px solid #8A42AF';
+        showHomoButton.classList.remove('tag-active');
+        showHomoButton.classList.add('closed-content');
+        showHomoButton.style.textDecoration = 'none';
+
+        racismShowing = 0;
+        racismContent.style.display = 'none';
+        racismRightSide.style.display = 'none';
+        showRacismButton.innerHTML = 'Racism';
+        showRacismButton.style.fontSize = '2em';
+        showRacismButton.style.border = '1px solid #8A42AF';
+        showRacismButton.classList.remove('tag-active');
+        showRacismButton.classList.add('closed-content');
+        showRacismButton.style.textDecoration = 'none';
+
+        honMenShowing = 0;
+        honMenContent.style.display = 'none';
+        honMenRightSide.style.display = 'none';
+        honMenButton.innerHTML = 'Honorable Mentions';
+        honMenButton.style.fontSize = '2em';
+        honMenButton.style.border = '1px solid #8A42AF';
+        honMenButton.classList.remove('tag-active');
+        honMenButton.classList.add('closed-content');
+        honMenButton.style.textDecoration = 'none';
+
+
+    } else if (antiSDisplay == 1){
+        antiSDisplay = 0;
+        antiSContent.style.display = 'none';
+        antiSRightSide.style.display = 'none';
+        antiSButton.innerHTML = 'Anti-Semitism';
+        antiSButton.style.fontSize = '2em';
+        antiSButton.style.border = '1px solid #8A42AF';
+        antiSButton.classList.remove('tag-active');
+        antiSButton.classList.add('closed-content');
+        antiSButton.style.textDecoration = 'none';
+    }
+}
+
+antiSButton.addEventListener('click', showAntiS);
+
+function showHonMen(){
+    if (honMenShowing == 0){
+        honMenShowing = 1;
+        honMenContent.style.display = 'block';
+        honMenRightSide.style.display = 'block';
+        honMenButton.innerHTML = "☆ｏ(＞＜；)○ ↓";
+        honMenButton.style.fontSize = '4em';
+        honMenButton.style.border = 'none';
+        honMenButton.classList.add('tag-active');
+        honMenButton.classList.remove('closed-content');
+        honMenButton.style.color = '#8A42AF';
+        honMenButton.style.textDecoration = 'underline';
+
+        homophobiaContent.style.display = 'none';
+        homophobiaRightSide.style.display = 'none';
+        showHomoButton.innerHTML = 'Homophobia';
+        showHomoButton.style.fontSize = '2em';
+        showHomoButton.style.border = '1px solid #8A42AF';
+        showHomoButton.classList.remove('tag-active');
+        showHomoButton.classList.add('closed-content');
+        showHomoButton.style.textDecoration = 'none';
+
+        racismShowing = 0;
+        racismContent.style.display = 'none';
+        racismRightSide.style.display = 'none';
+        showRacismButton.innerHTML = 'Racism';
+        showRacismButton.style.fontSize = '2em';
+        showRacismButton.style.border = '1px solid #8A42AF';
+        showRacismButton.classList.remove('tag-active');
+        showRacismButton.classList.add('closed-content');
+        showRacismButton.style.textDecoration = 'none';
+
+
+        antiSDisplay = 0;
+        antiSContent.style.display = 'none';
+        antiSRightSide.style.display = 'none';
+        antiSButton.innerHTML = 'Anti-Semitism';
+        antiSButton.style.fontSize = '2em';
+        antiSButton.style.border = '1px solid #8A42AF';
+        antiSButton.classList.remove('tag-active');
+        antiSButton.classList.add('closed-content');
+        antiSButton.style.textDecoration = 'none';
+
+    } else if (honMenShowing == 1){
+        honMenShowing = 0;
+        honMenContent.style.display = 'none';
+        honMenRightSide.style.display = 'none';
+        honMenButton.innerHTML = 'Honorable Mentions';
+        honMenButton.style.fontSize = '2em';
+        honMenButton.style.border = '1px solid #8A42AF';
+        honMenButton.classList.remove('tag-active');
+        honMenButton.classList.add('closed-content');
+        honMenButton.style.textDecoration = 'none';
+    }
+}
+
+honMenButton.addEventListener('click', showHonMen);
