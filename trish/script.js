@@ -698,6 +698,69 @@ fetch('https://twitter135.p.rapidapi.com/UserTweets/?id=27252380&count=40', opti
         printTweets();
         
         function userData(){
+            //trishTweets.map()
+            const adult = trishTweets[0].content.itemContent.itemType;
+            if (adult == 'TimelineTombstone'){
+                const works = trishTweets.find(element => {
+                    return element.content.itemContent.itemType == 'TimelineTweet';
+                });
+                console.log(works);
+                var profileDisplay = document.createElement('div');
+                var displayName = document.createElement("h1");
+                var displayNameConsole = works.content.itemContent.tweet_results.result.core.user_results.result.legacy.name;
+                displayName.innerText = displayNameConsole;
+                profileDisplay.appendChild(displayName);
+                displayName.id = "display-name";
+                displayName.classList.add("animated-text");
+
+                //load @ once
+                var twitterHandle = document.createElement("p");
+                var twitterHandleConsole = works.content.itemContent.tweet_results.result.core.user_results.result.legacy.screen_name;
+                twitterHandle.innerText = `@${twitterHandleConsole}`;
+                profileDisplay.appendChild(twitterHandle);
+                twitterHandle.id = "twitter-handle"
+
+                //load banner img once
+                var bannerPicture = document.createElement("img");
+                bannerPicture.src = works.content.itemContent.tweet_results.result.core.user_results.result.legacy.profile_banner_url;
+                profileDisplay.appendChild(bannerPicture);
+                bannerPicture.id = "banner-picture";
+
+                //load profile pic once
+                var profilePic = document.createElement("img");
+                profilePic.src = works.content.itemContent.tweet_results.result.core.user_results.result.legacy.profile_image_url_https;
+                profileDisplay.appendChild(profilePic);
+                profilePic.id = "profile-picture";
+
+                //load follower count once
+                var followerCount = document.createElement("p");
+                var followerCountConsole = works.content.itemContent.tweet_results.result.core.user_results.result.legacy.followers_count;
+                followerCount.innerText = `(⌒‿⌒)♡→ followed by ${followerCountConsole} people`;
+                profileDisplay.appendChild(followerCount);
+                followerCount.id = "follower-count";
+
+                //load tweet count once
+                var tweetCount = document.createElement("p");
+                var tweetCountConsole = works.content.itemContent.tweet_results.result.core.user_results.result.legacy.statuses_count;
+                tweetCount.innerText = `(⌒‿⌒)♡→ has tweeted ${tweetCountConsole} times`;
+                profileDisplay.appendChild(tweetCount);
+                tweetCount.id = "tweet-count";
+
+                //load link in bio once
+                var urlBio = works.content.itemContent.tweet_results.result.core.user_results.result.legacy.entities.url.urls[0].expanded_url;
+                var a = document.createElement("a");
+                var p1 = (works.content.itemContent.tweet_results.result.core.user_results.result.legacy.description);
+                var linkText = document.createTextNode(p1);
+                a.appendChild(linkText);
+                a.href = urlBio;
+                a.title = linkText;
+                profileDisplay.appendChild(a);
+                a.id = "link-bio";
+                //console.log(a);
+
+                trishTwitterProfile.appendChild(profileDisplay);
+                return;
+            }
             var tweetType = trishTweets[0].content.entryType;
             if (tweetType == 'TimelineTimelineModule'){
                 var profileDisplay = document.createElement('div');
@@ -755,6 +818,7 @@ fetch('https://twitter135.p.rapidapi.com/UserTweets/?id=27252380&count=40', opti
                 trishTwitterProfile.appendChild(profileDisplay); 
                 return;
             };
+        
             retweetTest = trishTweets[0].content.itemContent.tweet_results.result;
             var profileDisplay = document.createElement('div');
             if (retweetTest.hasOwnProperty('tweet')){//if its a retweet
