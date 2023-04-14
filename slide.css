@@ -1,0 +1,122 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    padding: 0;
+    margin: 0;
+}
+
+@font-face {
+    font-family: "ArialNarrow";
+    src: url(fonts/arial-narrow.ttf);
+}
+
+@font-face {
+    font-family: "EditorialItalic";
+    src: url(fonts/PPEditorialNew-UltralightItalic.otf);
+}
+
+@font-face {
+    font-family: "EditorialRegular";
+    src: url(fonts/PPEditorialNew-Ultralight.otf);
+}
+
+.slide {
+    height: 100vh;
+    width: 100vw;
+    background-color: #FFF1FF;
+    padding: 20px;
+}
+
+h2 {
+    font-family: "EditorialItalic";
+    font-size: 4em;
+    color: #8A42AF;
+    text-shadow: 0 0 3px #8A42AF;
+    padding: 0;
+    margin: 0;
+}
+
+.spacer {
+    height: 10vh;
+}
+
+p {
+    font-size: 3em;
+    font-family: "ArialNarrow";
+    color: #8A42AF;
+    max-width: 68vw;
+}
+
+#up-button {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: 1px solid #8A42AF;
+    color: #8A42AF;
+    font-family: "EditorialRegular";
+    font-size: 4em;
+}
+
+#up-button:hover {
+    text-shadow: 0 0 3px #8A42AF;
+    box-shadow: 0 0 3px #8A42AF;
+}
+
+#down-button {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: 1px solid #8A42AF;
+    color: #8A42AF;
+    font-family: "EditorialRegular";
+    font-size: 4em;
+}
+
+#down-button:hover {
+    text-shadow: 0 0 3px #8A42AF;
+    box-shadow: 0 0 3px #8A42AF;
+}
+
+.icon {
+    position: fixed;
+    height: 50px;
+    width: 50px;
+    left: 20px;
+    bottom: 10px;
+}
+
+video {
+    width: 70vw;
+    height: auto;
+}
+
+.side {
+    position: fixed;
+    width: 29vw;
+    height: 70vh;
+    left: 70vw;
+    top: 15vh;
+    object-fit: contain;
+    object-position: center;
+}
+
+.landscape {
+    position: fixed;
+    width: 38vw;
+    top: 15vh;
+    left: 61vw;
+    object-fit: cover;
+    height: 70vh;
+}
+
+a {
+    font-size: 3em;
+    font-family: "ArialNarrow";
+    color: #8A42AF;
+    max-width: 68vw;
+}

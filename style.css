@@ -18,6 +18,16 @@ html {
     src: url(fonts/PPEditorialNew-Ultralight.otf);
 }
 
+#dont-move {
+    position: fixed;
+    top: 5px;
+    right: 5px;
+    font-family: "EditorialRegular";
+    padding: 0;
+    margin: 0;
+    font-size: 1.4em;
+}
+
 .intro {
     display: flex;
     position: relative;
